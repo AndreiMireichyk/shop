@@ -1,0 +1,46 @@
+extends ../../components/base/base
+block title
+    title Главная страницы
+block content
+    main.home
+        section.home__one
+            a(href='./products.html')
+                img(src=require('./first.png')).home__img
+            div.home__title ПРОДУКЦИЯ BiXBiT
+            p.home__desc Супер мега прикольное оборудование, нужно брать полюбому
+            div.home__action
+                a(href='./products.html').btn.btn__primary КУПИТЬ
+                a(href='./products.html').btn.btn__default ПОДРОБНЕЕ
+
+
+        section.home__two
+            div.home__poster
+                a(href='./products.html')
+                    img(src=require('./two1.png')).home__img
+                div.home__title ЛУЧШЕЕ ДЛЯ ВОЗДУХА
+                p.home__desc Супер мега прикольное оборудование, нужно брать полюбому
+                div.home__action
+                    a(href='./products.html').btn.btn__primary-outline КУПИТЬ
+
+            div.home__poster
+                a(href='./products.html')
+                    img(src=require('./two2.png')).home__img
+                div.home__title РЕМОНТНАЯ ЗОНА
+                p.home__desc This type of cooling provides optimal conditions, since the operating
+                div.home__action
+                    a(href='./products.html').btn.btn__primary-outline КУПИТЬ
+
+
+        section.home__three
+            a(href='./products.html')
+                img(src=require('./three.png')).home__img
+            div.home__title РАСПРОДАЖА АСИКОВ BITMAIN
+            p.home__desc Welcome To Desiclassifieds Free Classifieds Free Ads Free Advertisement
+            div.home__action
+                a(href='./products.html').btn.btn__primary КУПИТЬ
+                a(href='./products.html').btn.btn__default ПОДРОБНЕЕ
+
+
+        section.home__bestsellers
+            div.home__title.home__title--bestsellers ХИТЫ ПРОДАЖ
+            include ../../components/bestsellers/bestsellers

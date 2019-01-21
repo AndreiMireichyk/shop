@@ -1,0 +1,68 @@
+header.header
+    div.header__logo
+        a(href='./index.html')
+            img(src=require('./logo.svg'))
+
+    div.header__nav
+
+        div.header__search
+            a(href='javascript:void(0)')
+                i.icon-search.search__toggle
+            div.search
+                div.search__input
+                    input(placeholder='Serach in dropdown')
+                    i.icon-search
+                div.search__list
+                    a(href='./product.html').search__item
+                        img(src=require('./asic.png')).search__img
+                        span.search__title Asic 9
+                        span.search__price $312
+                    a(href='./product.html').search__item
+                        img(src=require('./asic.png')).search__img
+                        span.search__title Asic 9
+                        span.search__price $312
+                    a(href='./product.html').search__item
+                        img(src=require('./asic.png')).search__img
+                        span.search__title Asic 9
+                        span.search__price $312
+
+
+
+        div.header__contacts.contact-dropdown
+
+            a(href="javascript:void(0)")
+                i.icon-phone-1.contact-dropdown__phone-icon
+                span.contact-dropdown__title.contact-dropdown__title--first +375 29 289 74 79
+                i.icon-arrow-b.contact-dropdown__arrow-icon
+
+            div.contact-dropdown__list
+
+                div.contact-dropdown__header Контакты
+
+                a(href='tel:+375 29 289 74 79').contact-dropdown__item
+                    i.icon-phone-1.contact-dropdown__icon
+                    span.contact-dropdown__title +375 29 289 74 79
+
+                a(href='tel:+375 29 289 74 79').contact-dropdown__item
+                    i.icon-phone-1.contact-dropdown__icon
+                    span.contact-dropdown__title +375 29 289 74 79
+
+                a(href='tel:+375 29 289 74 79').contact-dropdown__item
+                    i.icon-phone-1.contact-dropdown__icon
+                    span.contact-dropdown__title +375 29 289 74 79
+
+                a(href='tel:+375 29 289 74 79').contact-dropdown__item
+                    i.icon-phone-1.contact-dropdown__icon
+                    span.contact-dropdown__title +375 29 289 74 79
+
+
+        div(data-toggle='dialog' data-target='#dialog').header__bucket
+            i.icon-bucket.header__bucket-icon
+                span.header__bucket-badge 1
+            span.header__bucket-title Корзина
+
+
+
+        a(href="javascript:void(0)").header__toggler
+            i.icon-menu.header__toggler-icon
+

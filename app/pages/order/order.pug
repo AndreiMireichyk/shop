@@ -1,0 +1,93 @@
+extends ../../components/base/base
+
+block title
+    title Страница оформления заказа
+
+block content
+    main.order
+        div.order__wrap
+            section.order__contact-block.contact__block--city.contact
+                div.contact__block
+                    div.contact__title ВАШ НАСЕЛЕННЫЙ ПУНКТ
+                    div.input.has-error
+                        input(type='text' required='required' id='city')
+                        label(for='city') Название
+                        small Текст ошибки
+                div.contact__block.contact__block--address
+                    div.contact__title АДРЕС ДОСТАВКИ
+                    div.input__group
+                        div.input
+                            input(type='text' required='required' id='str')
+                            label(for='str') Улица
+                            small Текст ошибки
+                        div.input
+                            input(type='number' required='required' id='house')
+                            label(for='house') Дом
+                            small Текст ошибки
+                        div.input
+                            input(type='number' required='required' id='apartments')
+                            label(for='apartments') Кв
+                            small Текст ошибки
+                        div.input
+                            input(type='number' required='required' id='index')
+                            label(for='index') Индекс
+                            small Текст ошибки
+                div.contact__block.contact__block--name
+                    div.contact__title КОНТАКТНАЯ ИНФОРМАЦИЯ
+                    div.input__group
+                        div.input
+                            input(type='text' required='required' id='first_name')
+                            label(for='first_name') Фамилия
+                            small Текст ошибки
+                        div.input
+                            input(type='text' required='required' id='last_name')
+                            label(for='last_name') Имя
+                        div.input
+                            input(type='text' required='required' id='patronymic_name')
+                            label(for='patronymic_name') Отчество
+                            small Текст ошибки
+                    div.input__group
+                        div.input
+                            input(type='text' required='required' id='phone')
+                            label(for='phone') Телефон
+                            small Текст ошибки
+                        div.input
+                            input(type='text' required='required' id='email')
+                            label(for='email') E-mail
+                            small Текст ошибки
+
+                div.contact__action
+                    a(href="#").btn__primary заказать
+
+
+            section.order__product-block
+                div.product
+                    div.product__header
+                        div.product__header-title ВАШ ЗАКАЗ
+                        div.product__header-edit
+                            a(data-toggle='dialog' data-target='#dialog').product__edit-link Изменить
+                    div.product__list
+                        each val in [6,7,8]
+                            a(href='./product.html').product__item
+                                img(src=require('./asic.png')).product__image
+                                div.product__group
+                                    div.product__title Common Projects<br> Derby Shine
+                                    div.product__details
+                                        div.product__count #{val}шт.
+                                        div.product__price $#{val}4#{val}
+
+                    div.product__estimation
+                        div.product__estimation-item
+                            div Сумма
+                            div $3 000
+                        div.product__estimation-item
+                            div Доставка
+                            div $140
+
+                        div.product__estimation-total
+                            div Итого
+                            div $3 140
+
+
+
+

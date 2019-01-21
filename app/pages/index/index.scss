@@ -1,0 +1,91 @@
+@import "../../components/btn/btn";
+@import "../../components/bestsellers/bestsellers";
+
+.home {
+
+  &__one, &__two {
+    margin-bottom: 50px;
+  }
+
+  &__two {
+    @include row-flex();
+    flex-wrap: nowrap;
+    padding: 0 8px;
+  }
+
+  &__three {
+    border-bottom: 1px solid #e9e9f0;
+    padding-bottom: 50px;
+  }
+
+  &__bestsellers {
+    margin: 50px 0 100px;
+  }
+
+  &__poster {
+    @include col();
+    @include size(6);
+    padding: 0 8px;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-family: $font-din-black;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 auto;
+
+    &--bestsellers {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__desc {
+    text-align: center;
+    font-family: $font-din-regular;
+    font-size: 16px;
+    color: $dark-color;
+    max-width: 327px;
+    margin: 0 auto 25px auto;
+  }
+
+  &__action {
+    text-align: center;
+    a {
+      margin: 0 26px;
+    }
+  }
+
+  @include sm-block {
+
+    &__two {
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__poster {
+      @include size(12);
+      padding: 0;
+      margin-bottom: 50px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__desc {
+      padding: 0 20px;
+    }
+
+    &__action {
+
+      a {
+        margin: 0 10px;
+      }
+    }
+  }
+}

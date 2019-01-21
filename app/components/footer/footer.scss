@@ -1,0 +1,52 @@
+@import "../base/vars";
+@import "../base/smartgrid";
+
+.footer {
+  padding: 50px 20px;
+  background: $dark-color;
+
+  &__wrap {
+    @include row-flex();
+    max-width: 1200px;
+    margin: 0 auto;
+    @include sm-block{
+      min-width: 160px;
+      justify-content: center;
+    }
+  }
+
+  &__menu {
+    padding: 0 50px;
+    @include sm-block{
+      min-width: 160px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 15px;
+  }
+
+  &__link {
+    font-family: $font-din-regular;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #bbbbbb;
+    transition: color 0.3s;
+    &:hover {
+      color: $white-color;
+    }
+    .icon-mail {
+      font-size: 16px;
+      padding-right: 15px;
+    }
+    .icon-phone-1 {
+      font-size: 19px;
+      padding-right: 15px;
+    }
+    .icon-skype {
+      font-size: 20px;
+      padding-right: 15px;
+    }
+  }
+}

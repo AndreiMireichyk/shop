@@ -1,0 +1,45 @@
+@import "vars";
+
+@font-face {
+  font-family: $font-din-medium;
+  src: url('../../components/base/fonts/DinPro/DINPro-Medium.eot');
+  src: local('DIN Pro Medium'), local('DINPro-Medium'),
+  url('../../components/base/fonts/DinPro/DINPro-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../../components/base/fonts/DinPro/DINPro-Medium.woff') format('woff'),
+  url('../../components/base/fonts/DinPro/DINPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-din-regular;
+  src: url('../../components/base/fonts/DinPro/DINPro.eot');
+  src: local('DIN Pro'), local('DINPro'),
+  url('../../components/base/fonts/DinPro/DINPro.eot?#iefix') format('embedded-opentype'),
+  url('../../components/base/fonts/DinPro/DINPro.woff') format('woff'),
+  url('../../components/base/fonts/DinPro/DINPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-din-bold;
+  src: url('../../components/base/fonts/DinPro/DINPro-Bold.eot');
+  src: local('../../components/base/fonts/DinPro/DIN Pro Bold'), local('DINPro-Bold'),
+  url('../../components/base/fonts/DinPro/DINPro-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../../components/base/fonts/DinPro/DINPro-Bold.woff') format('woff'),
+  url('../../components/base/fonts/DinPro/DINPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-din-black;
+  src: url('../../components/base/fonts/DinPro/DINPro-Black.eot');
+  src: local('DIN Pro Black'), local('DINPro-Black'),
+  url('../../components/base/fonts/DinPro/DINPro-Black.eot?#iefix') format('embedded-opentype'),
+  url('../../components/base/fonts/DinPro/DINPro-Black.woff') format('woff'),
+  url('../../components/base/fonts/DinPro/DINPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}

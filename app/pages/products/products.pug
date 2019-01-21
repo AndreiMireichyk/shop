@@ -1,0 +1,178 @@
+extends ../../components/base/base
+
+block title
+    title Страница продуктов
+
+block content
+    main.products
+        section.products__wrap
+            //- Блок фильтров
+            div.products__filter-block
+
+                ul.filter
+                    li.filter__item
+                        a(href='javascript:void()').filter__title Фильтры checkbox
+                            i.filter__icon.icon-arrow-r
+                        ul.filter__subitem
+                            li.checkbox
+                                input(type='checkbox' name='checkbox' id='checkbox_1')
+                                label(for='checkbox_1')
+                                    span ASICminer
+                            li.checkbox
+                                input(type='checkbox' name='checkbox' id='checkbox_2')
+                                label(for='checkbox_2') Bitmain
+                            li.checkbox
+                                input(type='checkbox' name='checkbox' id='checkbox_3')
+                                label(for='checkbox_3') Suits
+                            li.checkbox
+                                input(type='checkbox' name='checkbox' id='checkbox_4')
+                                label(for='checkbox_4') Trousers
+                            li.checkbox
+                                input(type='checkbox' name='checkbox' id='checkbox_5')
+                                label(for='checkbox_5') Jeans
+                            li.checkbox
+                                input(type='checkbox' name='checkbox' id='checkbox_6')
+                                label(for='checkbox_6') Shirts
+
+
+                    li.filter__item
+                        a(href='javascript:void()').filter__title Фильтры radio
+                            i.filter__icon.icon-arrow-r
+                        ul.filter__subitem
+                            li.radio
+                                input(type='radio' name='radio' id='radio_1')
+                                label(for='radio_1')
+                                    span ASICminer
+                            li.radio
+                                input(type='radio' name='radio' id='radio_2')
+                                label(for='radio_2')
+                                    span ASICminer
+                            li.radio
+                                input(type='radio' name='radio' id='radio_3')
+                                label(for='radio_3')
+                                    span ASICminer
+                            li.radio
+                                input(type='radio' name='radio' id='radio_5')
+                                label(for='radio_5')
+                                    span ASICminer
+                            li.radio
+                                input(type='radio' name='radio' id='radio_6')
+                                label(for='radio_6')
+                                    span ASICminer
+                            li.radio
+                                input(type='radio' name='radio' id='radio_7')
+                                label(for='radio_7')
+                                    span ASICminer
+
+                    li.filter__item
+                        a(href='javascript:void()').filter__title Фильтры input
+                            i.filter__icon.icon-arrow-r
+                        ul.filter__subitem
+                            li.input
+                                label От
+                                input(type='number' placeholder='100')
+                            li.input
+                                label До
+                                input(type='number' placeholder='200')
+
+                    li.filter__item
+                        a(href='javascript:void()').filter__title Фильтры input
+                            i.filter__icon.icon-arrow-r
+                        ul.filter__subitem
+                            li.input
+                                label От
+                                input(type='number' placeholder='100')
+                            li.input
+                                label До
+                                input(type='number' placeholder='200')
+
+                    li.filter__item
+                        a(href='javascript:void()').filter__title Фильтры input
+                            i.filter__icon.icon-arrow-r
+                        ul.filter__subitem
+                            li.input
+                                label От
+                                input(type='number' placeholder='100')
+                            li.input
+                                label До
+                                input(type='number' placeholder='200')
+                    li.filter__action
+                        a(href='#').btn__default-outline.btn__default-outline--filter Очистить
+                        a(href='#').btn__primary.btn__primary--filter Применить
+
+                a(href='javascript:void(0)').filter__toggle Фильтр
+
+            //- Блок листинга товаров
+            div.products__products-block
+                //- Сортировка товаров
+                div.products__sort-block.sort
+                    div.sort__title Сортировать по:
+                    a(href='javascript:void(0)').sort__item.sort__item--desc
+                        span Цене
+                        i.icon-arrow-b
+                    a(href='javascript:void(0)').sort__item
+                        span Имени
+                        i.icon-arrow-b
+                    a(href='javascript:void(0)').sort__item
+                        span Популярности
+                        i.icon-arrow-b
+                a(href='javascript:void(0)').sort__toggle Сортировка
+
+                //- Листинг товаров
+                div.products__list.product
+                    each val in [1, 2, 3, 4, 5,6,7,8,9,10,11,12]
+                        div.product__item
+                            a(href='./product.html').product__wrap
+                                img(src=require('./asic.png'), alt="Title").product__image
+                                div.product__group
+                                    div.product__title Apple Watch  Apple Watch Sport Apple Watch  Apple Watch Sport #{val}
+                                    div.product__desc 42 mm Silver Aluminium Case with White Sport Band
+                                    div.product__details
+                                        div.product__price $349
+                                        div.product__label.product__label--new New
+                        div.product__item
+                            a(href='./product.html').product__wrap
+                                img(src=require('./asic.png'), alt="Title").product__image
+                                div.product__group
+                                    div.product__title Apple Watch  Apple Watch Sport Apple Watch  Apple Watch Sport #{val}
+                                    div.product__desc 42 mm Silver Aluminium Case with White Sport Band
+                                    div.product__details
+                                        div.product__price $349
+                                        div.product__label.product__label--sale Sale
+                        div.product__item
+                            a(href='./product.html').product__wrap
+                                img(src=require('./asic.png'), alt="Title").product__image
+                                div.product__group
+                                    div.product__title Apple Watch  Apple Watch Sport Apple Watch  Apple Watch Sport #{val}
+                                    div.product__desc 42 mm Silver Aluminium Case with White Sport Band
+                                    div.product__details
+                                        div.product__price $349
+                        div.product__item
+                            a(href='./product.html').product__wrap
+                                img(src=require('./asic.png'), alt="Title").product__image
+                                div.product__group
+                                    div.product__title Apple Watch  Apple Watch Sport Apple Watch  Apple Watch Sport #{val}
+                                    div.product__desc 42 mm Silver Aluminium Case with White Sport Band
+                                    div.product__details
+                                        div.product__price $349
+                        div.product__item
+                            a(href='./product.html').product__wrap
+                                img(src=require('./asic.png'), alt="Title").product__image
+                                div.product__group
+                                    div.product__title Apple Watch  Apple Watch Sport Apple Watch  Apple Watch Sport #{val}
+                                    div.product__desc 42 mm Silver Aluminium Case with White Sport Band
+                                    div.product__details
+                                        div.product__price $349
+
+
+
+                //- Пагинация
+                div.products__pagination-block.pagination
+                    a(href='#').pagination__prev
+                        i.icon-arrow-l
+
+                    div.pagination__info СТРАНИЦА 1 ИЗ 9
+
+                    a(href='#').pagination__next
+                        i.icon-arrow-r
+

@@ -1,0 +1,95 @@
+@import "../base/vars";
+@import "../base/smartgrid";
+
+.bestsellers {
+  overflow: auto;
+
+  &__block-title{
+    text-align: center;
+    font-family: $font-din-medium;
+    font-size: 32px;
+    color: $dark-color;
+    margin: 0 auto 50px auto;
+  }
+
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    width: 1200px;
+
+    &--prod{
+      width: 1080px;
+    }
+  }
+
+  &__item {
+    min-width: 260px;
+    width: 260px;
+    min-height: 350px;
+    padding: 25px;
+    box-sizing: border-box;
+    margin: 0 25px;
+    background-color: #f9f9fb;
+    border-radius: 6px;
+    border: 1px solid #e9e9f0;
+    text-align: center;
+  }
+  &__wrap--prod &__item{
+    background-color: $white-color;
+    margin: 0 5px;
+  }
+
+  &__img {
+    height: 175px;
+  }
+
+  &__title {
+    font-family: $font-din-bold;
+    font-size: 18px;
+    color: $dark-color;
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    font-family: $font-din-regular;
+    font-size: 14px;
+    color: $dark-color;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-family: $font-din-bold;
+    font-size: 20px;
+    color: $dark-color;
+  }
+
+
+  @include lg-block{
+    &__wrap{
+      justify-content: flex-start;
+      width: auto;
+      margin: 0;
+    }
+
+    &__item{
+      padding: 25px;
+      min-width: 37vw;
+      width: 37vw;
+      margin: 3vw;
+    }
+  }
+
+  @include xs-block{
+
+    &__item{
+      padding: 15px;
+      min-width: 66.6vw;
+      width: 66.6vw;
+      margin: 3vw;
+    }
+  }
+
+}

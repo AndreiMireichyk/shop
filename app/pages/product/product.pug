@@ -1,0 +1,134 @@
+extends ../../components/base/base
+
+block title
+    title Страница продукта
+
+block content
+    main.product
+        section.product__wrap
+            div.product__header
+                div.product__header-wrap
+                    div.product__header-align
+
+                        //- Слайдер картинок
+                        div.product__images
+                            ul.slider
+                                each img in [1,2,3,4,5,6,7,8,9]
+                                    li.slider__item
+                                        img(src=require('./asic.png') alt=img)
+
+
+                        //- Вернуться в раздел каталога
+                        a(href='./products.html').product__back-link
+                            i.icon-arrow-l
+                            span Асики
+
+                        //- НаиМенование товара и цена
+                        div.product__title
+                            h1.product__name Antminer D3
+                            div.product__price $1150
+
+                        //- Мини описание товара
+                        div.product__min-desc Sweatshirt from Our Legacy. Crafted from cotton jersey. ribbed cuffs and bottom hem. Raglan sleeves with contrasting flower embroidery. Rounded and ribbed neck.
+
+                        //- Основные характеристика товара
+                        ul.product__basic-opts.basic-opts
+                            li.basic-opts__item
+                                div.basic-opts__name Производитель
+                                div.basic-opts__value Bitmain
+                            li.basic-opts__item
+                                div.basic-opts__name Чипсет
+                                div.basic-opts__value 288BM 1387 ASIC
+                            li.basic-opts__item
+                                div.basic-opts__name Hashrate
+                                div.basic-opts__value 14TH/s
+                            li.basic-opts__item
+                                div.basic-opts__name Consumption
+                                div.basic-opts__value 1372V
+                            li.basic-opts__item
+                                div.basic-opts__name Алгоритм
+                                div.basic-opts__value SHA-256
+                            li.basic-opts__item
+                                div.basic-opts__name Power supply
+                                div.basic-opts__value APW3
+
+                        //- Сопутствующие товары
+                        ul.product__optional.optional-prods
+                            li.optional-prods__item-title Дополнительное оборудование:
+                            li
+                                input(type='checkbox', id='c-1').optional-prods__checkbox
+                                label(for='c-1').optional-prods__item
+                                    img(src=require('./asic.png')).optional-prods__image
+                                    span.optional-prods__link Antminer X3
+                                    span.optional-prods__price $314
+
+                        //- Кнопка заказать
+                        a(href='javascript:void(0)').product__order.btn.btn__primary-order
+                            i.icon-bucket-2
+                            span add to cart
+
+            //- Блок навигации следующий, предыдущий, каталог
+            div.product__nav.prod-nav
+                a(href='./product.html').prod-nav__item
+                    i.icon-arrow-l
+                    span назад
+                a(href='./products.html').prod-nav__item
+                    i.icon-catalog
+                    span вернуться в каталог
+                a(href='./product.html').prod-nav__item
+                    span далее
+                    i.icon-arrow-r
+
+
+            h2.product__subtitle Все характеристики
+
+            //- Полный список параметров товара
+            ul.product__full-opts.full-opts
+                li.full-opts__item
+                    div.full-opts__name Вес
+                    div.full-opts__value 20кг
+                li.full-opts__item
+                    div.full-opts__name Алгоритм хэширования:
+                    div.full-opts__value SHA-256
+                li.full-opts__item
+                    div.full-opts__name Общий хэшрейт:
+                    div.full-opts__value 14 TH/s ±5%
+                li.full-opts__item
+                    div.full-opts__name Вид чипа:
+                    div.full-opts__value BM1387
+                li.full-opts__item
+                    div.full-opts__name Техпроцесс:
+                    div.full-opts__value 16nm
+                li.full-opts__item
+                    div.full-opts__name Количество чипов:
+                    div.full-opts__value 189 шт
+                li.full-opts__item
+                    div.full-opts__name Рабочая частота по умолчанию:
+                    div.full-opts__value 600МГц
+                li.full-opts__item
+                    div.full-opts__name Вес
+                    div.full-opts__value 20кг
+                li.full-opts__item
+                    div.full-opts__name Алгоритм хэширования:
+                    div.full-opts__value SHA-256
+                li.full-opts__item
+                    div.full-opts__name Общий хэшрейт:
+                    div.full-opts__value 14 TH/s ±5%
+                li.full-opts__item
+                    div.full-opts__name Вид чипа:
+                    div.full-opts__value BM1387
+                li.full-opts__item
+                    div.full-opts__name Техпроцесс:
+                    div.full-opts__value 16nm
+                li.full-opts__item
+                    div.full-opts__name Количество чипов:
+                    div.full-opts__value 189 шт
+                li.full-opts__item
+                    div.full-opts__name Рабочая частота по умолчанию:
+                    div.full-opts__value 600МГц
+
+            //- Полное описание товара
+            p.product__max-desc Bitmain Antminer S9i – это ASIC-майнер нового поколения, основанный на 16нм чипах и способный просчитывать хеш-алгоритмы с невероятной скоростью в 14 тх/с. К особенностям данного устройства следует отнести малый вес, компактность, богатое технологическое оснащение и высочайшее качество изготовления.
+
+        section.product__bestsellers
+            include ../../components/bestsellers/bestsellers_prod_page

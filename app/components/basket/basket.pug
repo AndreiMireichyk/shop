@@ -1,0 +1,38 @@
+div#dialog.dialog.dialog--basket
+    div.dialog__content
+        div.basket
+            a(href='javascript:void(0)' data-dismiss='dialog').basket__close
+            div.basket__title Корзина
+
+            div.basket__info
+                div.basket__name Товар
+                div.basket__count Кол-во
+                div.basket__price Цена
+
+            div.basket__products.basket-product
+                each val in [1,2,3,4,5]
+                    div.basket-product__item
+                        input(type='checkbox' id='item_'+ val)
+                        label(for='item_'+ val).basket-product__wrap
+                            img(src=require('./asic.png')).basket-product__image
+                            span.basket-product__details
+                                span.basket-product__title Asicminer 3D
+                                span.basket-product__art АРТ.203977
+                            span.basket-product__count
+                                a(href='javascript:void(0)').icon-minus.basket-product__icon
+                                span.basket-product__in 1
+                                a(href='javascript:void(0)').icon-plus.basket-product__icon
+                            span.basket-product__price $290
+
+            div.basket__total
+                div.basket__total-title Total
+                div.basket__total-sum $1 035
+
+            div.basket__action
+                a(href='javascript:void(0)').btn__default-outline Очистить
+                a(href='./order.html').btn__primary Заказать
+
+
+
+
+

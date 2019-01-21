@@ -1,0 +1,381 @@
+@import "../base/vars";
+@import "../base/smartgrid";
+
+$header-border-color: #e9e9f0;
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 54px;
+  border-bottom: 1px solid $header-border-color;
+  background: $white-color;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+
+  &__logo {
+    padding: 0 20px;
+
+    img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__nav {
+    @include row-flex();
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+  }
+
+  /* Search */
+  &__search {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    border-right: 1px solid $header-border-color;
+
+  }
+
+  /* CONTACTS */
+  &__contacts {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-right: 1px solid $header-border-color;
+  }
+
+  /* BUCKET */
+  &__bucket {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__bucket-icon {
+    position: relative;
+    font-size: 19px;
+  }
+
+  &__bucket-badge {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-radius: 5.5px;
+    background: $primary-color;
+
+    text-align: center;
+    line-height: 11px;
+    font-family: $font-din-regular;
+    font-size: 8px;
+    color: $white-color;
+  }
+
+  &__bucket-title {
+    font-family: $font-din-regular;
+    font-size: 15px;
+    color: $dark-color;
+    padding-left: 16px;
+  }
+
+  /*MENU TRIGGER*/
+  &__toggler {
+    align-items: center;
+    cursor: pointer;
+    padding: 0 20px;
+    display: none;
+  }
+
+  &__toggler-icon {
+    font-size: 10px;
+    color: #757575;
+  }
+
+  /*Mobile style*/
+  @include sm-block {
+
+    &__bucket-title {
+      display: none;
+    }
+
+    &__bucket, &__contacts, &__search {
+      padding: 0 25px 0 0;
+      border-right: none;
+    }
+
+    &__toggler {
+      display: flex;
+      height: 100%;
+      border-left: 1px solid $header-border-color;
+    }
+
+    &__contacts-phone-icon {
+      font-size: 19px;
+      padding-right: 0;
+    }
+
+  }
+}
+
+/*CONTACTS DROP DOWN ADN POPUP */
+.contact-dropdown {
+  position: relative;
+
+  &.show &__list {
+    display: block;
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background: $white-color;
+    box-shadow: 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08);
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__item {
+    display: block;
+    padding: 10px 12px;
+    margin: 0 8px;
+    border-bottom: 1px solid #f1f2f4;
+  }
+
+  &__icon {
+    padding-right: 16px;
+  }
+
+  &__header {
+    display: none;
+    text-align: center;
+    font-family: $font-din-bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #c3c3c8;
+    padding: 15px;
+    margin: 0 auto;
+    border-bottom: 1px solid #f1f2f4;
+  }
+
+  &__title {
+    font-family: $font-din-regular;
+    font-size: 15px;
+  }
+
+  &__phone-icon {
+    padding-right: 15px;
+  }
+
+  &__arrow-icon {
+    padding-left: 10px;
+    font-size: 7px;
+    color: #c8c8c8;
+  }
+
+  @include sm-block {
+
+    &__arrow-icon,
+    &__title--first {
+      display: none;
+    }
+
+    &__phone-icon {
+      position: relative;
+      top: 2px;
+      font-size: 19px;
+      padding: 0;
+    }
+
+    &.show:before {
+      content: " ";
+      display: block;
+      position: fixed;
+      z-index: 9;
+      top: 55px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: $dark-color;
+      opacity: 0.6;
+
+    }
+
+    &__list {
+      position: fixed;
+      top: auto;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    &__item {
+      padding: 10px 20px;
+      margin: 0;
+    }
+
+    &__header {
+      display: block;
+    }
+
+  }
+}
+
+/*SEARCH PRODUCTS CATALOG*/
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+
+  &__toggle {
+    font-size: 19px;
+    display: none;
+  }
+
+  &__input {
+    @include row-flex();
+    align-items: center;
+    position: relative;
+
+    input {
+      width: 100%;
+      font-family: $font-din-medium;
+      font-size: 14px;
+      color: #a2a2a3;
+      background: #f5f5f7;
+      padding: 7px 30px 7px 10px;
+      border: none;
+      border-radius: 3px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .icon-search {
+      position: absolute;
+      font-size: 13px;
+      right: 8.5px;
+    }
+  }
+
+  &.show &__list {
+    display: block;
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    z-index: 15;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    background: $white-color;
+    box-shadow: 0 3px 4px 0 rgba(10, 31, 68, 0.1), 0 0 1px 0 rgba(10, 31, 68, 0.08);
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-din-regular;
+    font-size: 14px;
+    color: $dark-color;
+    padding: 8px 8px 8px 20px;
+    border-bottom: 1px solid #f1f2f4;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__img {
+    height: 32px;
+    width: 39px;
+    padding-right: 15px;
+  }
+
+  &__title {
+    flex-grow: 1;
+  }
+
+  &__price {
+    font-family: $font-din-medium;
+    font-size: 14px;
+    color: $dark-color;
+  }
+
+  @include sm-block {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    right: 20px;
+    display: none;
+    max-width: none;
+    width: auto;
+
+    &:before {
+      display: block;
+      content: " ";
+      position: fixed;
+      top: 55px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $dark-color;
+      opacity: 0.6;
+    }
+
+    &.show {
+
+      display: block;
+    }
+
+    &__toggle {
+      display: block;
+    }
+
+    &__input {
+
+      input {
+        width: 100%;
+        font-family: $font-din-medium;
+        font-size: 14px;
+        color: #a2a2a3;
+        background: #f5f5f7;
+        padding: 12.5px 30px 12.5px 10px;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .icon-search {
+        position: absolute;
+        font-size: 13px;
+        right: 8.5px;
+      }
+    }
+
+
+  }
+}

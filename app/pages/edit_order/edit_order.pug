@@ -1,0 +1,42 @@
+extends ../../components/base/base
+
+block title
+    title Страница изменения заказа
+
+block content
+    main.edit_order
+        div.edit_order__wrap
+            section.edit_order__prod-block.product
+                each val in [1,2,3,4,5]
+                    div.product__item
+                        a(href='./product.html' )
+                            img(src=require('./asic.png')).product__image
+                        div.product__details
+                            a(href='./product.html').product__title Common Projects Derby Shine
+                            a(href='javascript:void(0)').product__remove УДАЛИТЬ ТОВАР
+                        div.product__count
+                            a(href='javascript:void(0)').icon-minus.product__minus
+                            div.product__in 1
+                            a(href='javascript:void(0)').icon-plus.product__plus
+                        div.product__price $29#{val}
+
+
+            section.edit_order__estimation-block
+                div.estimation
+                    div.estimation__title СУММА ЗАКАЗА
+                    div.estimation__item
+                        div Сумма
+                        div $23 700
+                    div.estimation__item
+                        div Доставка
+                        div $100
+                    div.estimation__total
+                        div ИТОГО
+                        div $23 800
+                    div.estimation__total
+                    div.estimation__action
+                        a(href='./order.html').btn__primary Заказать
+
+
+
+

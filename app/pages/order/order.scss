@@ -1,0 +1,302 @@
+@import "../../components/btn/btn";
+@import "../../components/base/smartgrid";
+
+.order {
+  background: #f5f5f7;
+
+  &__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  &__contact-block {
+    width: 100%;
+    max-width: 800px;
+    background: $white-color;
+    border: 1px solid #e9e9f0;
+  }
+
+  &__product-block {
+    width: 100%;
+    max-width: 350px;
+    margin-left: 24px;
+  }
+
+  @include sm-block {
+
+    &__wrap {
+      padding: 0;
+    }
+
+    &__product-block {
+      display: none;
+    }
+
+  }
+}
+
+// Blocks
+.order .product {
+  width: 100%;
+  background: $white-color;
+  border: 1px solid #e9e9f0;
+
+  &__header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    border-bottom: 1px solid #e9e9f0;
+  }
+
+  &__header-title {
+    font-family: $font-din-bold;
+    font-size: 18px;
+    color: $dark-color;
+  }
+
+  &__edit-link {
+    font-family: $font-din-regular;
+    font-size: 14px;
+    color: #646464;
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 15px 24px;
+    border-bottom: 1px solid #e9e9f0;
+  }
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    padding-right: 24px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__title {
+    font-family: $font-din-medium;
+    font-size: 15px;
+    color: $dark-color;
+    margin-bottom: 20px;
+  }
+
+  &__details {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__count {
+    font-family: $font-din-regular;
+    font-size: 14px;
+    color: $dark-color;
+  }
+
+  &__price {
+    font-family: $font-din-regular;
+    font-size: 16px;
+    color: $primary-color;
+  }
+
+  &__estimation {
+    padding: 25px;
+  }
+
+  &__estimation-item {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: $font-din-regular;
+    color: #646464;
+    font-size: 14px;
+
+    margin-bottom: 10px;
+  }
+
+  &__estimation-total {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: $font-din-medium;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    margin-top: 30px;
+  }
+}
+
+.order .contact {
+
+  padding: 25px;
+
+  &__block {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #e9e9f0;
+  }
+
+  &__title {
+    width: 100%;
+    font-family: $font-din-bold;
+    font-size: 18px;
+    color: $dark-color;
+  }
+
+  &__action {
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  @include sm-block {
+
+    padding: 30px 15px;
+
+    &__block {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    &__title {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    &__block--city {
+      .input {
+        width: 100%;
+      }
+    }
+
+    &__block--address {
+      .input {
+        width: calc(33% - 25px);
+      }
+
+      .input:last-child {
+        width: 33%;
+      }
+
+      .input:first-child {
+        padding: 0;
+        width: 100%;
+        flex-grow: 1;
+      }
+    }
+
+    &__block--name {
+      .input {
+        padding: 0;
+      }
+    }
+
+    &__action a {
+      background: #dc3876;
+      font-size: 12px;
+      letter-spacing: 2px;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
+
+    }
+
+  }
+
+}
+
+.order .input {
+  width: 100%;
+  position: relative;
+  margin: 25px 0 0 0;
+
+  label {
+    display: block;
+    font-family: $font-din-regular;
+    font-size: 14px;
+    color: #0a1f44;
+    opacity: 0.4;
+
+    position: absolute;
+    top: 13px;
+    left: 15px;
+
+    transition: all 0.3s;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+
+    font-family: $font-din-regular;
+    font-size: 14px;
+    box-sizing: border-box;
+    appearance: none;
+  }
+
+  small {
+    position: absolute;
+    bottom: -18px;
+    display: none;
+    font-family: $font-din-regular;
+    font-size: 12px;
+    color: #ff1f50;
+  }
+
+  input:valid + label,
+  input:focus + label {
+    top: -20px;
+    left: 0;
+  }
+
+  &.has-error small {
+    display: block;
+  }
+
+  &__group {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    & > div:last-child {
+      padding-right: 0;
+    }
+
+    & > div {
+      padding-right: 25px;
+    }
+  }
+
+  @include sm-block {
+
+    margin: 0 0 45px 0;
+
+    &__group {
+      flex-wrap: wrap;
+    }
+
+  }
+}

@@ -1,0 +1,23 @@
+doctype html
+
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        block title
+    body
+        //- Fix events safari ios onclick='void(0)'
+        div(onclick='void(0)')
+            block basket
+                include ../basket/basket
+            block header
+                include ../header/header
+
+            block category_nav
+                include ../category_nav/category_nav
+
+            block content
+                div content
+
+            block footer
+                include ../footer/footer
